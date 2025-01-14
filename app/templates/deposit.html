@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Deposit Funds{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/deposit.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="display-4">Deposit Fiat</h1>
+    <p class="lead">Select your region to see bank transfer details.</p>
+
+    <form id="payment-form" class="deposit-form">
+
+        <div class="form-group">
+            <select id="region" name="region" required class="form-control">
+                <option value="other">Select Region</option>
+                <option value="eu">European Union (SEPA Transfer)</option>
+                <option value="other">Other Regions (SWIFT Transfer)</option>
+            </select>
+        </div>
+
+        <div id="sepa-bank-details" class="bank-details" style="display:none;">
+            <h3>SEPA Bank Transfer</h3>
+            <p>Use the following details for SEPA bank transfer:</p>
+            <ul>
+                <li><strong>Recipent:</strong> {{account_holder}}</li>
+                <li><strong>IBAN:</strong> DE00000000000000000000</li>
+            </ul>
+        </div>
+
+        <div id="swift-bank-details" class="bank-details" style="display:none;">
+            <h3>SWIFT Bank Transfer</h3>
+            <p>Use the following details for SWIFT bank transfer:</p>
+            <ul>
+                <li><strong>Account Number:</strong> 123456789</li>
+                <li><strong>SWIFT/BIC:</strong> 0000DE00XXX</li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+{% block additional_scripts %}
+<script src="{{ url_for('static', filename='js/deposit-sepa-toggler.js') }}"></script>
+{% endblock %}
+{% endblock %}

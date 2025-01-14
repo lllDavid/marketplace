@@ -1,0 +1,41 @@
+.container {
+    padding-top: 5rem
+}
+
+.table thead {
+    border-bottom: 0.1rem solid rgba(68, 68, 68, 0.7);
+}
+
+.coin-table th,
+.coin-table td {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
+.coin-logo {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.coin-symbol {
+    margin-left: 0.625rem;
+    color: rgb(88, 79, 79);
+}
+
+.h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Cookies{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cookies.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Cookies</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>At <strong>[Marketplace]</strong>, we use cookies to enhance your experience on our website. By using our
+            site, you consent to the use of cookies as described in this policy. You can manage or disable cookies
+            at any time through your browser settings.</p>
+    </section>
+
+    <section>
+        <h2>What Are Cookies?</h2>
+        <p>Cookies are small text files stored on your device when you visit a website. They help the site remember
+            your preferences, enhance functionality, and improve your browsing experience.</p>
+    </section>
+
+    <section>
+        <h2>Types of Cookies We Use</h2>
+        <ul>
+            <li><strong>Essential Cookies:</strong> Necessary for the website to function properly, such as for
+                authentication and security.</li>
+            <li><strong>Performance Cookies:</strong> Collect data about how you use our site, allowing us to
+                improve its performance and user experience.</li>
+            <li><strong>Functional Cookies:</strong> Remember your preferences, such as language or region settings,
+                to provide a more personalized experience.</li>
+            <li><strong>Advertising Cookies:</strong> Used to deliver relevant ads to you and measure the
+                effectiveness of advertising campaigns.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How We Use Cookies</h2>
+        <ul>
+            <li>To remember your preferences and settings.</li>
+            <li>To analyze site usage and improve user experience.</li>
+            <li>To deliver personalized content and ads.</li>
+            <li>To ensure website security and functionality.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Managing Cookies</h2>
+        <p>You can manage or disable cookies through your browser settings. Note that disabling certain cookies may
+            impact your experience on our website.</p>
+    </section>
+
+    <section>
+        <h2>Changes</h2>
+        <p>We may update this policy from time to time. Any changes will be posted here.</p>
+    </section>
+
+    <section>
+        <p>If you have any questions about our use of cookies, please contact us at <a
+                href="mailto:info@marketplace.com">info@marketplace.com</a>.</p>
+    </section>
+</div>
+{% endblock %}

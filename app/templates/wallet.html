@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Wallet{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/wallet.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="h1">
+        <h1 class="display-4">Wallet</h1>
+        <p class="lead">Track cryptocurrency investments</p>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="d-flex flex-column">
+                <div class="table-responsive">
+                    <table class="table coin-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Coin</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Current Price (USD)</th>
+                                <th scope="col">Value (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coin-data">
+                            <tr>
+                                <td colspan="4">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block additional_scripts %}
+<script>
+    var walletValuesUrl = "{{ url_for('wallet_values.get_wallet_values') }}";
+</script>
+<script src="{{ url_for('static', filename='js/wallet-populate-table.js') }}"></script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,43 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #121212
+}
+
+.navbar .navbar-nav .nav-link {
+    font-size: 1.1em;
+}
+
+.nav-link:hover {
+    color: white
+}
+
+.navbar-brand {
+    opacity: 0.5;
+}
+
+.btn-primary,
+.btn-danger {
+    text-align: center;
+    width: 9.0rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 2.0rem;
+    border-radius: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+    opacity: 0.3;
+}

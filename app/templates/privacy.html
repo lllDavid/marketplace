@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/privacy.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Privacy</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>At <strong>[Marketplace]</strong>, we value your privacy. This policy explains how we collect, use, and
+            protect your data.</p>
+    </section>
+
+    <section>
+        <h2>Information We Collect</h2>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email, phone, etc., when you register or contact us.</li>
+            <li><strong>Usage Data:</strong> Details of your website activity (IP, browser, pages visited).</li>
+            <li><strong>Cookies:</strong> To enhance your experience on our site.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How We Use Your Information</h2>
+        <ul>
+            <li>To provide and improve our services.</li>
+            <li>To communicate with you.</li>
+            <li>To personalize your experience.</li>
+            <li>To send marketing materials (with your consent).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Security</h2>
+        <p>We use security measures to protect your data but cannot guarantee 100% security.</p>
+    </section>
+
+    <section>
+        <h2>Sharing Your Information</h2>
+        <p>We do not sell your data. We may share it with service providers or if required by law.</p>
+    </section>
+
+    <section>
+        <h2>Your Rights</h2>
+        <ul>
+            <li>Access and correct your data.</li>
+            <li>Request deletion of your data.</li>
+            <li>Opt-out of marketing emails.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Children’s Privacy</h2>
+        <p>Our site is not for children under 13, and we do not knowingly collect data from them.</p>
+    </section>
+
+    <section>
+        <h2>Changes</h2>
+        <p>We may update this policy. Changes will be posted here.</p>
+    </section>
+
+    <section>
+        <p>If you have any questions about our privacy policy, please contact us at <a
+                href="mailto:info@marketplace.com">info@marketplace.com</a>.</p>
+    </section>
+</div>
+
+{% endblock %}

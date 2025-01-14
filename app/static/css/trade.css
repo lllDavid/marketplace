@@ -1,0 +1,46 @@
+.container {
+    max-width: 37.5rem;
+    min-width: 18.75rem;
+    padding: 1.25rem;
+    margin-top: 6vh;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 0.625rem;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 0.4375rem;
+    margin: 0.1rem;
+}
+
+.tab-button.active {
+    background-color: #1639ad;
+    color: white;
+}
+
+label {
+    margin: 0.625rem 0 0.3125rem;
+}
+
+input,
+select {
+    background-color: #121212;
+    color: white;
+    width: 100%;
+    padding: 0.625rem;
+    margin: 0.3125rem 0 0.9375rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+}
+
+.trade-form-container {
+    background-color: #121212;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+#buy-limit-container {
+    display: none;
+}
