@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="display-4">Home</h1>
+            <p class="lead">Top 100 Cryptocurrencies Performance</p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table id="coinTable" class="table coin-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>1h %</th>
+                            <th>24h %</th>
+                            <th>7d %</th>
+                            <th>Market Cap</th>
+                            <th>Volume(24h)</th>
+                            <th>Circulating Supply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin"
+                                    class="coin-logo">
+                                Bitcoin <span class="coin-symbol">BTC</span>
+                            </td>
+                            <td>$50,293.49</td>
+                            <td>+2.5%</td>
+                            <td>+10%</td>
+                            <td>-5%</td>
+                            <td>$193,429,984,000.00</td>
+                            <td>$5,234,000,000.00</td>
+                            <td>19,000,182 BTC</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum"
+                                    class="coin-logo">
+                                Ethereum <span class="coin-symbol">ETH</span>
+                            </td>
+                            <td>$4,182.76</td>
+                            <td>+3.2%</td>
+                            <td>+8%</td>
+                            <td>-3%</td>
+                            <td>$460,178,295,238.00</td>
+                            <td>$25,634,892,491.00</td>
+                            <td>120,194,364 ETH</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/cardano-ada-logo.png" alt="Cardano"
+                                    class="coin-logo">
+                                Cardano <span class="coin-symbol">ADA</span>
+                            </td>
+                            <td>$2.30</td>
+                            <td>+1.8%</td>
+                            <td>+5%</td>
+                            <td>-2%</td>
+                            <td>$75,102,458,302.00</td>
+                            <td>$1,024,193,481.00</td>
+                            <td>33,492,873,234 ADA</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td class="coin-name">
+                                <img src="https://www.shutterstock.com/shutterstock/photos/2337233137/display_1500/stock-photo-indonesia-july-logo-of-the-rising-crypto-coin-xrp-ripple-2337233137.jpg"
+                                    alt="Ripple" class="coin-logo">
+                                Ripple <span class="coin-symbol">XRP</span>
+                            </td>
+                            <td>$1.02</td>
+                            <td>+1.2%</td>
+                            <td>+3%</td>
+                            <td>-1%</td>
+                            <td>$50,174,302,453.00</td>
+                            <td>$2,048,702,394.00</td>
+                            <td>50,234,567,982 XRP</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana"
+                                    class="coin-logo">
+                                Solana <span class="coin-symbol">SOL</span>
+                            </td>
+                            <td>$200.78</td>
+                            <td>+5.5%</td>
+                            <td>+15%</td>
+                            <td>-8%</td>
+                            <td>$70,142,682,000.00</td>
+                            <td>$4,003,194,000.00</td>
+                            <td>350,342,118 SOL</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=040" alt="Polkadot"
+                                    class="coin-logo">
+                                Polkadot <span class="coin-symbol">DOT</span>
+                            </td>
+                            <td>$40.92</td>
+                            <td>+4.0%</td>
+                            <td>+12%</td>
+                            <td>-6%</td>
+                            <td>$40,295,102,874.00</td>
+                            <td>$2,048,712,847.00</td>
+                            <td>1,024,392,235 DOT</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/chainlink-link-logo.png" alt="Chainlink"
+                                    class="coin-logo">
+                                Chainlink <span class="coin-symbol">LINK</span>
+                            </td>
+                            <td>$31.45</td>
+                            <td>+6.1%</td>
+                            <td>+18%</td>
+                            <td>-7%</td>
+                            <td>$13,347,229,019.00</td>
+                            <td>$1,572,032,417.00</td>
+                            <td>450,382,714 LINK</td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/avalanche-avax-logo.png" alt="Avalanche"
+                                    class="coin-logo">
+                                Avalanche <span class="coin-symbol">AVAX</span>
+                            </td>
+                            <td>$80.21</td>
+                            <td>+2.0%</td>
+                            <td>+9%</td>
+                            <td>-4%</td>
+                            <td>$22,391,540,421.00</td>
+                            <td>$1,063,402,703.00</td>
+                            <td>270,453,931 AVAX</td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td class="coin-name">
+                                <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/terra-luna-7152209-5795365.png?f=webp&w=256"
+                                    alt="Terra" class="coin-logo">
+                                Terra <span class="coin-symbol">LUNA</span>
+                            </td>
+                            <td>$85.12</td>
+                            <td>+3.0%</td>
+                            <td>+11%</td>
+                            <td>-2%</td>
+                            <td>$10,478,029,493.00</td>
+                            <td>$2,086,702,943.00</td>
+                            <td>150,234,873 LUNA</td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td class="coin-name">
+                                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin"
+                                    class="coin-logo">
+                                Litecoin <span class="coin-symbol">LTC</span>
+                            </td>
+                            <td>$200.78</td>
+                            <td>+1.5%</td>
+                            <td>+7%</td>
+                            <td>-3%</td>
+                            <td>$13,586,314,201.00</td>
+                            <td>$1,234,987,384.00</td>
+                            <td>70,453,812 LTC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block additional_scripts %}
+<script src="{{ url_for('static', filename='js/home-market-data.js') }}"></script>
+{% endblock %}
+{% endblock %}

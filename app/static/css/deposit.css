@@ -1,0 +1,32 @@
+.container {
+    max-width: 31.25rem;
+    min-width: 20rem;
+    padding: 1.25rem;
+    margin-top: 3.25rem;
+    background-color: #121212;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.5);
+}
+
+input,
+select {
+    background-color: #121212;
+    color: white;
+    width: 40%;
+    padding: 0.625rem;
+    margin: 0.3125rem 0 0.9375rem;
+    border-radius: 0.25rem;
+    border: 1px solid #444;
+    font-size: 1rem;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 1.25rem;
+}
+
+.bank-details {
+    margin-bottom: 1.25rem;
+}

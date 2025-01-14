@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Support{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/support.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="h1">
+        <h1 class="display-4">Support</h1>
+        <p class="lead">Ask for help</p>
+    </div>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+    <div class="alert alert-dismissible fade show" role="alert">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <section class="faq-section">
+        <div class="faq-item">
+            <h3>How do I reset my password?</h3>
+            <p>If you've forgotten your password, you can reset it by clicking on the 'Forgot Password' link on the
+                login page. You will receive a reset link via your registered email address.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I contact support?</h3>
+            <p>You can contact our support team directly by filling out the form below. Please include as much
+                detail as possible so we can assist you effectively.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What should I do if I can't access my account?</h3>
+            <p>If you're unable to access your account, please ensure you're using the correct username and
+                password. If issues persist, try resetting your password or contact support for assistance.</p>
+        </div>
+    </section>
+
+    <section class="support-form-section">
+        <h2>Contact Support</h2>
+        <form action="{{ url_for('support_email.send_support_email') }}" method="POST">
+
+            <div class="form-group mb-3">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required class="form-control"
+                    placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required class="form-control"
+                    placeholder="Enter the subject of your issue">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required class="form-control"
+                    placeholder="Describe your issue or question"></textarea>
+            </div>
+            <div class="submit-button-container">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+{% endblock %}

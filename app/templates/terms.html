@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Terms{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/terms.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Terms of Service</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>Welcome to <strong>[Marketplace]</strong>. By using our services, you agree to the following terms.
+            Please read them carefully.</p>
+    </section>
+
+    <section>
+        <h2>Agreement and Use of Services</h2>
+        <p>By accessing our website, you agree to comply with these terms and conditions. We provide an online
+            marketplace for buying and selling goods, and you agree to use our platform for lawful purposes only.</p>
+    </section>
+
+    <section>
+        <h2>User Responsibilities</h2>
+        <ul>
+            <li>You must provide accurate and truthful information.</li>
+            <li>You are responsible for the confidentiality of your account information.</li>
+            <li>You agree not to engage in unlawful activity or misuse the website.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Intellectual Property</h2>
+        <p>All content on the website, including text, images, logos, and software, is the property of [Marketplace]
+            and is protected by copyright laws. Unauthorized use is prohibited.</p>
+    </section>
+
+    <section>
+        <h2>Legal Responsibility</h2>
+        <p>We are not liable for damages or losses resulting from your use of our services. By using our platform,
+            you agree to indemnify [Marketplace] from any claims arising from your use.</p>
+    </section>
+
+    <section>
+        <h2>Account Termination</h2>
+        <p>We may suspend or terminate your account if you violate these terms or engage in illegal activity.</p>
+    </section>
+
+    <section>
+        <h2>Updates to Terms</h2>
+        <p>We may update these terms periodically. Any changes will be posted on this page and take effect
+            immediately upon posting.</p>
+    </section>
+
+    <section>
+        <h2>Governing Law</h2>
+        <p>These terms are governed by the laws of [Your Country/State]. Disputes will be resolved in the courts
+            located in [Your Location].</p>
+    </section>
+
+    <section>
+        <p>If you have any questions, please contact us at <a
+                href="mailto:info@marketplace.com">info@marketplace.com</a>.</p>
+    </section>
+</div>
+
+{% endblock %}

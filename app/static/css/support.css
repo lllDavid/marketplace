@@ -1,0 +1,66 @@
+.container {
+    padding-top: 5rem;
+}
+
+.faq-section,
+.support-form-section {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.faq-section h2,
+.support-form-section h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    padding: 10px;
+    background-color: #121212;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.faq-item h3 {
+    margin: 1.5rem;
+}
+
+.faq-item p {
+    margin-top: 5px;
+}
+
+.support-form-section {
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #121212;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}

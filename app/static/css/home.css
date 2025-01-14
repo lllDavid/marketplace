@@ -1,0 +1,52 @@
+.container {
+    padding-top: 5rem;
+}
+
+.table {
+    width: 100%;
+    table-layout: auto;
+    background-color: #121212;
+    color: #fff;
+}
+
+th,
+td {
+    background-color: #121212;
+    color: #fff;
+    padding: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+th {
+    padding: 12px;
+}
+
+.coin-name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.coin-logo {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.7rem;
+}
+
+.coin-symbol {
+    margin-left: 0.625rem;
+    color: rgb(88, 79, 79);
+}
+
+.coin-table {
+    border: none !important;
+}
+
+.coin-table th,
+.coin-table td {
+    color: #e0e0e0;
+    background-color: #121212;
+    border: none !important;
+}

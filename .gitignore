@@ -1,0 +1,51 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment directory 
+venv/
+env/
+.venv/
+.env/
+
+# Flask specific
+instance/
+.webassets-cache/
+
+# Database files 
+*.db
+*.sql.gz  
+*.bak      
+*.dump    
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+
+# Package distribution / Build files
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Cache and temporary files
+*.bak
+*.tmp
+
+# Confidential information
+*.pem            
+*.key           
+*.crt  
+       
+# API keys
+api_keys/      
+*.apikey        
