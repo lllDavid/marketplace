@@ -56,4 +56,5 @@ function updateCoinPrices() {
 
 document.addEventListener("DOMContentLoaded", function () {
     populateTable();
+    updateCoinPrices();
 });
