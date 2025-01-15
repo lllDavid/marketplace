@@ -18,7 +18,7 @@ setup(
     },
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/lllDavid/Crypto-Marketplace",
+    url="https://github.com/lllDavid/marketplace",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.12",
