@@ -16,15 +16,7 @@ def handle_login(request):
         if user_info:
             email = user_info.get('email')
             user = get_user_by_email(email)
-            '''
-            if not user:
-                user = User(
-                    username=user_info.get('name'),
-                    email=email,
-                    oauth_provider='google',
-                )
-                save_user(user) 
-                '''
+            
             if user:
                 session["user_id"] = user.id
                 session["username"] = user.username
