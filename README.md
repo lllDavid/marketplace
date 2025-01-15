@@ -4,16 +4,16 @@
 - **Note**: This is not an actual exchange and does not involve real transactions. It is intended as a development prototype for educational and demonstration purposes.
 
 ## Features:
-- Cryptocurrency buying and selling functionality (Mock Implementation) – Simulated trades and transactions.
-- Dashboard showing Market Data (Mock Implementation) – Data is randomly generated; it’s for demonstration purposes.
-- Wallet showing coins and values.
-- Store coins and coin data in a database.
-- Store users and user data in a database.
+- Cryptocurrency buying and selling functionality (Mock Implementation) 
+- Dashboard showing Market Data (Mock Implementation) 
+- Wallet showing coins and values
+- Store coins and coin data in a database
+- Store users and user data in a database
 - Flask-based REST APIs
 - Integration with MariaDB for data storage 
-- Using OAuth2 to login with Google Account (Mock Implementation) – Simulated login process.
-- Secure password hashing (Argon2id) – For securing user credentials.
-- Secure authentication (2FA via Authenticator App not yet implemented) – Placeholder for future 2FA.
+- Using OAuth2 to login with Google Account (Mock Implementation) 
+- Secure password hashing (Argon2id) – For securing user credentials
+- Secure authentication (2FA via Authenticator App not yet implemented) 
 
 ---
 
