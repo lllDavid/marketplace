@@ -13,7 +13,7 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: root 
       MARIADB_DATABASE: marketplace  
-      MARIADB_USER: root  
+      MARIADB_USER: marketplace_user
       MARIADB_PASSWORD: root  
     ports:
       - "3306:3306"
