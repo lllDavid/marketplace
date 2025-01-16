@@ -17,6 +17,26 @@
 
 ---
 
+#### Prerequisites:
+- Python 3.12+
+- MariaDB
+- `pip` (Python package installer)
+
+# Setting up Environment Variables
+
+To run the application, you'll need to create a `.env` file in the root of the project with the following content:
+
+```bash
+GOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_client_secret
+
+GMAIL_ADDRESS=your_gmail_address
+GMAIL_PASSWORD=your_gmail_password
+
+URL_STS_SECRET_KEY=your_url_sts_secret_key
+
+SUPPORT_EMAIL=your_email_address
+```
 ## Installation
 
 You can set up the **Marketplace** in two ways: using **Git** or **Docker**.
@@ -24,11 +44,6 @@ You can set up the **Marketplace** in two ways: using **Git** or **Docker**.
 ### 1. **How to Use with Git**:
 
 Follow these steps to install and run the project using Git.
-
-#### Prerequisites:
-- Python 3.12+
-- MariaDB
-- `pip` (Python package installer)
 
 #### Steps:
 
@@ -45,7 +60,8 @@ cd marketplace
 pip install -r requirements.txt
 ```
 
-3. **Set up MariaDB: Install MariaDB on your local machine.**
+3. **Set up MariaDB:**
+Install MariaDB on your local machine.
 
 You can do so by running the following commands depending on your operating system.
 
@@ -66,7 +82,8 @@ mysql -u root -p
 CREATE DATABASE marketplace;
 ```
 
-6. **Configure Database and Database Connection: config.py**
+6. **Configure Database and Database Connection:**
+The Database config is located in config.py in the root directory
 
 The SQL scripts for creating the necessary tables are located in the /db directory.
 
@@ -80,15 +97,17 @@ python run.py
 8. **This will start the Flask development server at http://127.0.0.1:5000/ by default.**
 
 ### 2. **How to Use with Docker**:
-Follow these steps to run the project using Docker and Docker Compose.
+Follow these steps to run the project using Docker.
 
 **Prerequisites**:
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+or
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
 **Steps**:
 
-Clone the Repository: If you haven't cloned the repository yet, run the following command:
+Clone the Repository:
 ```bash
 git clone https://github.com/lllDavid/marketplace.git
 cd marketplace
@@ -96,7 +115,6 @@ cd marketplace
 
 **Build and Start the Application Using Docker Compose:**
 
-The repository contains a docker-compose.yml file that simplifies the process of running the application with Docker.
 Run the following command to build and start the application (including the database):
 ```bash
 docker-compose up 
