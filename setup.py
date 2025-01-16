@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-    'marketplace-cli=marketplace.run:main',
+    'marketplace-cli=marketplace.run:Main',
         ],
     },
     long_description=open('README.md').read(),
