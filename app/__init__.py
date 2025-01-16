@@ -1,8 +1,10 @@
 from os import urandom
 from os import getenv
 from dotenv import load_dotenv
+
 from flask import Flask
 from flask_mail import Mail
+from authlib.integrations.flask_client import OAuth
 
 from config import Config
 from app.blueprints.user_creator import user_creator
@@ -19,10 +21,28 @@ mail = Mail()
 
 def create_app() -> Flask:
     marketplace = Flask(__name__, static_folder="static", template_folder="templates")
-    marketplace.secret_key = urandom(24)
+    oauth = OAuth(marketplace)
+    marketplace.secret_key = getenv('SECRET_KEY', urandom(24)) # Fallback to urandom if not found
+    marketplace.config.from_object(Config)
     marketplace.config.from_object(Config)
 
-    marketplace.config['MAIL_SERVER'] = 'smtp.gmail.com' # GMAIL for testing purposes only
+    google = oauth.register(
+        name='google',
+        client_id=getenv('GOOGLE_CLIENT_ID'),
+        client_secret=getenv('GOOGLE_CLIENT_SECRET'),
+        authorize_url='https://accounts.google.com/o/oauth2/auth',
+        authorize_params=None,
+        access_token_url='https://accounts.google.com/o/oauth2/token',
+        refresh_token_url=None,
+        api_base_url='https://www.googleapis.com/oauth2/v1/',
+        client_kwargs={'scope': 'openid profile email'},
+        jwks_uri="https://www.googleapis.com/oauth2/v3/certs",
+        userinfo_endpoint='https://openidconnect.googleapis.com/v1/userinfo'
+    )
+
+    marketplace.google = google
+
+    marketplace.config['MAIL_SERVER'] = 'smtp.gmail.com' 
     marketplace.config['MAIL_PORT'] = 587
     marketplace.config['MAIL_USE_TLS'] = True
     marketplace.config['MAIL_USERNAME'] = getenv('GMAIL_ADDRESS')  
