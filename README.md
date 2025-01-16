@@ -22,7 +22,7 @@
 - MariaDB
 - `pip` (Python package installer)
 
-# Setting up Environment Variables
+## Setting up Environment Variables
 
 To run the application, you'll need to create a `.env` file in the root of the project with the following content:
 
@@ -48,22 +48,19 @@ Follow these steps to install and run the project using Git.
 #### Steps:
 
 1. **Clone the Repository**:
-   Clone the repository from GitHub to your local machine.
+
 ```bash
    git clone https://github.com/lllDavid/marketplace.git
 ```
 
 2. **Navigate into the Project Directory:**
-After cloning, go to the project directory.
+
 ```bash
 cd marketplace
 pip install -r requirements.txt
 ```
 
 3. **Set up MariaDB:**
-Install MariaDB on your local machine.
-
-You can do so by running the following commands depending on your operating system.
 
 Ubuntu/Debian:
 ```bash
@@ -83,6 +80,7 @@ CREATE DATABASE marketplace;
 ```
 
 6. **Configure Database and Database Connection:**
+
 The Database config is located in config.py in the root directory
 
 The SQL scripts for creating the necessary tables are located in the /db directory.
