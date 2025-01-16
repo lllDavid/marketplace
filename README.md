@@ -15,8 +15,6 @@
 - Secure password hashing (Argon2id) 
 - Secure authentication (2FA via Authenticator App not yet implemented) 
 
----
-
 ## Prerequisites:
 - Python 3.12+
 - MariaDB
@@ -36,11 +34,14 @@ GOOGLE_CLIENT_SECRET=your_client_secret
 GMAIL_ADDRESS=your_gmail_address
 GMAIL_PASSWORD=your_gmail_password
 
+# Email address user sends support messages to
+SUPPORT_EMAIL=your_email_address
+
 # Secret key for URLSafeTimedSerializer
 URLSafeTimedSerializer_SECRET_KEY=your_urlsafetimedserializer_secret_key
 
-# Email address user sends support messages to
-SUPPORT_EMAIL=your_email_address
+# Secret Key for the Flask App
+APP_SECRET_KEY=your_secret_key
 
 ```
 

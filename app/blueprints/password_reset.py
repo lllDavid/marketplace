@@ -8,7 +8,6 @@ from app.user.user_security import UserSecurity
 from app.db.user_db import update_password, get_user_by_email
 from helpers.validation import is_valid_password
 
-
 load_dotenv()
 
 reset_password = Blueprint('reset_password', __name__)

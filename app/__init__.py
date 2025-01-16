@@ -22,7 +22,7 @@ mail = Mail()
 def create_app() -> Flask:
     marketplace = Flask(__name__, static_folder="static", template_folder="templates")
     oauth = OAuth(marketplace)
-    marketplace.secret_key = getenv('SECRET_KEY', urandom(24)) # Fallback to urandom if not found
+    marketplace.secret_key = getenv('APP_SECRET_KEY', urandom(24)) # Fallback to urandom if not found
     marketplace.config.from_object(Config)
     marketplace.config.from_object(Config)
 
