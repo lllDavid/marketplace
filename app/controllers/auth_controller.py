@@ -9,24 +9,6 @@ from helpers.validation import is_valid_password, is_unique_username, is_unique_
 from app.db.user_db import update_username, update_email, update_password, update_user_bank, get_complete_user,get_user_bank, get_user_by_id, get_user_by_email, get_user_by_username, delete_user
 
 def handle_login(request):
-    oauth_token = session.get('oauth_token')
-    
-    if oauth_token:
-        user_info = session.get('user_info')
-        if user_info:
-            email = user_info.get('email')
-            user = get_user_by_email(email)
-            
-            if user:
-                session["user_id"] = user.id
-                session["username"] = user.username
-                session["email"] = user.email
-                session.modified = True
-            
-            return redirect(url_for("home"))
-        else:
-            return redirect(url_for("login"))  
-    
     username = request.form.get("username")
     password = request.form.get("password")
 

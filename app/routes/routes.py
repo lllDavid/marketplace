@@ -1,6 +1,9 @@
 from flask import render_template, redirect, url_for, request, session
 
-from app.blueprints.oauth import oauth_google, callback
+from app.db.user_db import get_user_by_email
+from app.user.user_creator import UserCreator
+from app.wallets.fiat.fiat_wallet_creator import create_fiat_wallet
+from app.wallets.crypto.crypto_wallet_creator import create_cryto_wallet
 from app.controllers.auth_controller import handle_login, handle_settings, handle_deposit
 
 def register_routes(app):
@@ -24,20 +27,21 @@ def register_routes(app):
     def signup():
         return render_template("signup.html")
     
-    @app.route("/oauth_google")
-    def oauth_google_route():
-        return oauth_google()
-
-    @app.route("/callback", methods=["GET"])
-    def callback_route():
-        code = request.args.get('code')
-        return callback(code)
+    @app.route("/oauth-signup")
+    def oauth_signup():
+        redirect_uri = url_for('authorize', _external=True)
+        return app.google.authorize_redirect(redirect_uri)
 
     @app.route("/login", methods=["GET", "POST"])
     def login():
         if request.method == "POST":
             return handle_login(request)
         return render_template("login.html")
+    
+    @app.route("/oauth-login")
+    def oauth_login():
+        redirect_uri = url_for('authorize', _external=True)
+        return app.google.authorize_redirect(redirect_uri)
     
     @app.route("/login/reset-password")
     def reset_password():
@@ -71,4 +75,39 @@ def register_routes(app):
     @app.route("/support", methods=["GET", "POST"])
     def support():
         return render_template("support.html")
+    
+    @app.route('/authorize')
+    def authorize():
+        token = app.google.authorize_access_token()
+        resp = app.google.get('userinfo')
+        user_info = resp.json()
+        print(user_info)
+
+        session["email"] = user_info["email"]
+        email = user_info["email"]
+        
+        user = get_user_by_email(email)
+
+        if user_info:
+            if not user:
+                user_creator = UserCreator()
+                user = user_creator.create_user(user_info["name"], user_info["email"], password="")
+                user_creator.save_user(user)
+                if user.id:
+                    create_fiat_wallet(user.id)
+                    create_cryto_wallet(user.id)
+                session["user_id"] = user.id
+                session["username"] = user.username
+                session["email"] = user.email
+                session.modified = True
+
+        if user:
+            session["user_id"] = user.id
+            session["username"] = user.username
+            session.modified = True
+
+            return redirect(url_for("home"))
+        else:
+            return redirect(url_for("login"))
+
     
