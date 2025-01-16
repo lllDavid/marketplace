@@ -24,7 +24,8 @@
 
 ## Setting up Environment Variables:
 
-To use certain features, you'll need to create a `.env` file in the root of the project with the following content: ( Otherwise, OAuth signup and login will not function, and you'll be unable to send password reset emails or messages to the support email address.)
+To use certain features, you'll need to create a `.env` file in the root of the project with the following content: 
+(Otherwise, OAuth signup and login will not function, and you'll be unable to send password reset emails or messages to the support email address.)
 
 ```bash
 # Google OAuth credentials
@@ -50,9 +51,9 @@ https://developers.google.com/identity/protocols/oauth2/web-server
 
 Authorized redirect URIs needed for OAuth2:
 
-http://localhost:5000/login
-http://localhost:5000/authorize
-http://127.0.0.1:5000/authorize
+- http://localhost:5000/login
+- http://localhost:5000/authorize
+- http://127.0.0.1:5000/authorize
 
 
 ## Installation
@@ -87,7 +88,7 @@ sudo service mysql start
 ```
 Windows:
 
-You can download and install MariaDB from their official site. [MariaDB](https://mariadb.com/downloads/)
+You can download and install MariaDB from their official site: [MariaDB](https://mariadb.com/downloads/)
 
 5. **Create the Database:** 
 
