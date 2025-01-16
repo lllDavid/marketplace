@@ -138,9 +138,14 @@ docker-compose up
 Once the containers are up and running, you can access the Flask app in your browser at:
 http://localhost:5000
 
+**Rebuild the Containers after a change:**
+
+```bash
+docker-compose --build
+```
+
 **Stop the Docker Containers:**
 
-To stop the running Docker containers, use the following command:
 ```bash
 docker-compose down
 ```
