@@ -12,7 +12,7 @@ from app.blueprints.crypto_purchase import crypto_purchase
 from app.blueprints.crypto_liquidation import crypto_liquidation
 from app.blueprints.wallet_values import wallet_values
 from app.blueprints.password_reset import reset_password
-from app.blueprints.send_support_email import support_email
+from app.blueprints.support_email import support_email
 from app.routes.routes import register_routes
 
 load_dotenv()

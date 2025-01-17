@@ -16,7 +16,7 @@ pool = ConnectionPool(
 )
 
 # --------------------------------------------------------------
-# Section 1: Insert and Delete Coin Data
+# Section 1: Insert, Update and Delete Coin Data
 # --------------------------------------------------------------
 
 def insert_coin(coin: Coin) -> Coin | None:
