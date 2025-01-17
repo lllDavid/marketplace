@@ -22,7 +22,7 @@ pool = ConnectionPool(
 )
 
 # --------------------------------------------------------------
-# Section 1: Insert, Delete, and Update User Data
+# Section 1: Insert, Update and Delete User Data
 # --------------------------------------------------------------
 
 def insert_user(user: User) -> User | None:
@@ -109,20 +109,6 @@ def insert_user(user: User) -> User | None:
     except Exception as e:
         print(f"Error inserting the user: {e}")
 
-def delete_user(user_id: int) -> None:
-    try:
-        with pool.get_connection() as conn:
-            with conn.cursor() as cursor:
-                cursor.execute("DELETE FROM user_fingerprint WHERE user_id = %s", (user_id,))
-                cursor.execute("DELETE FROM user_security WHERE user_id = %s", (user_id,))
-                cursor.execute("DELETE FROM user_history WHERE user_id = %s", (user_id,))
-                cursor.execute("DELETE FROM user_status WHERE user_id = %s", (user_id,))
-                cursor.execute("DELETE FROM user_bank WHERE user_id = %s", (user_id,))
-                cursor.execute("DELETE FROM user WHERE id = %s", (user_id,))
-                conn.commit()
-    except Exception as e:
-            print(f"Error occurred while deleting coin with ID {user_id}: {e}")
-
 def update_username(id: int, username: str) -> None:
     try:
         with pool.get_connection() as conn:
@@ -190,6 +176,20 @@ def update_user_bank(user_id:int, user_bank: UserBank) -> UserBank | None :
     except Exception as e:
         print(f"Error occurred: {e}")
         return None
+
+def delete_user(user_id: int) -> None:
+    try:
+        with pool.get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute("DELETE FROM user_fingerprint WHERE user_id = %s", (user_id,))
+                cursor.execute("DELETE FROM user_security WHERE user_id = %s", (user_id,))
+                cursor.execute("DELETE FROM user_history WHERE user_id = %s", (user_id,))
+                cursor.execute("DELETE FROM user_status WHERE user_id = %s", (user_id,))
+                cursor.execute("DELETE FROM user_bank WHERE user_id = %s", (user_id,))
+                cursor.execute("DELETE FROM user WHERE id = %s", (user_id,))
+                conn.commit()
+    except Exception as e:
+            print(f"Error occurred while deleting coin with ID {user_id}: {e}")
 
 # --------------------------------------------------------------
 # Section 2: User Retrieval by Specific Criteria

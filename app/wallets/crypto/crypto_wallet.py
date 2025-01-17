@@ -18,7 +18,7 @@ class CryptoWallet:
         amount = amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
         formatted_date = date.strftime('%Y-%m-%d %H:%M:%S')
         self.deposit_history[formatted_date] = self.deposit_history.get(formatted_date, Decimal("0.00")) + amount
-        # TODO Always doubles the actual amount
+        # TODO shows double the actual amount
 
     def add_withdrawal_to_history(self, date: datetime, amount: Decimal, method: str) -> None:
         amount = amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)

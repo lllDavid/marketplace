@@ -7,7 +7,7 @@ from app.coin.coin_market_data import CoinMarketData
 @dataclass
 class CoinService:
     api_url = str
-    
+    # Mock feature
     def fetch_coin_data(self, coin_id: str) -> CoinMarketData:
         response = get(f"{self.api_url}/coins/{coin_id}")
         data = response.json()

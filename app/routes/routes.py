@@ -81,7 +81,6 @@ def register_routes(app):
         token = app.google.authorize_access_token()
         resp = app.google.get('userinfo')
         user_info = resp.json()
-        print(user_info)
 
         session["email"] = user_info["email"]
         email = user_info["email"]
