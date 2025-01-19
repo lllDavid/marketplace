@@ -9,8 +9,8 @@ from helpers.validation import is_valid_password, is_unique_username, is_unique_
 from app.db.user_db import update_username, update_email, update_password, update_user_bank, get_complete_user,get_user_bank, get_user_by_id, get_user_by_email, get_user_by_username, delete_user
 
 def handle_login(request):
-    username = request.form.get("username")
-    password = request.form.get("password")
+    username = request.form['username']
+    password = request.form['password']
 
     user = get_user_by_username(username)
     if user and UserSecurity.validate_password_hash(password, user.user_security.password_hash):

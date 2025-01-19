@@ -10,15 +10,19 @@ services:
 
   db:
     image: mariadb:latest
+    container_name: mariadb
     environment:
-      MARIADB_ROOT_PASSWORD: root 
-      MARIADB_DATABASE: marketplace  
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: marketplace
       MARIADB_USER: marketplace_user
-      MARIADB_PASSWORD: root  
+      MARIADB_PASSWORD: root
     ports:
       - "3306:3306"
     volumes:
       - mariadb_data:/var/lib/mysql
+      - ./app/db:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf 
 
 volumes:
   mariadb_data:
+    driver: local
