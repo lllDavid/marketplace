@@ -98,7 +98,7 @@ Log in to MariaDB and create the necessary database for the project.
 mysql -u root -p CREATE DATABASE marketplace;
 ```
 
-6. **Configure Database and Database Connection:**
+6. **Configure the Database:**
 
 The database configuration is located in the config.py file in the root directory.
 
@@ -133,16 +133,16 @@ Run the following command to build and start the application (including the data
 docker-compose up 
 ```
 
-**Access the Application:** 
-
-Once the containers are up and running, you can access the Flask app in your browser at:
-http://localhost:5000
-
-**Rebuild the Containers after a change:**
+If you get an error like Unknown database, try running:
 
 ```bash
 docker-compose --build
 ```
+
+**Access the Application:** 
+
+Once the containers are up and running, you can access the Flask app in your browser at:
+http://localhost:5000
 
 **Stop the Docker Containers:**
 
