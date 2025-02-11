@@ -102,7 +102,7 @@ mysql -u root -p CREATE DATABASE marketplace;
 
 The database configuration is located in the config.py file in the root directory.
 
-The SQL scripts for creating the required tables can be found in the /db directory.
+The SQL scripts for the required tables can be found in the /db directory.
 
 7. **Run the Flask Application:**
 
@@ -110,7 +110,7 @@ The SQL scripts for creating the required tables can be found in the /db directo
 python run.py
 ```
 
-8. **This will start the Flask development server at http://127.0.0.1:5000/ by default.**
+8. **This will start the Flask development server at http://127.0.0.1:5000/.**
 
 ### 2. **How to Use with Docker**:
 Follow these steps to run the project using Docker.
@@ -128,12 +128,12 @@ cd marketplace
 
 **Build and Start the Application Using Docker Compose:**
 
-Run the following command to build and start the application (including the database):
+Run the following command to build and start the application:
 ```bash
 docker-compose up 
 ```
 
-If you get an error like Unknown database, try running:
+If you get any errors try running:
 
 ```bash
 docker-compose --build
@@ -141,11 +141,5 @@ docker-compose --build
 
 **Access the Application:** 
 
-Once the containers are up and running, you can access the Flask app in your browser at:
+Once the containers are up and running, you can access the app in your browser at:
 http://localhost:5000
-
-**Stop the Docker Containers:**
-
-```bash
-docker-compose down
-```
