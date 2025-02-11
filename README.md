@@ -18,7 +18,7 @@
 ## Prerequisites:
 - Python 3.12+
 - MariaDB
-- `pip` (Python package installer)
+- `pip`
 
 ## Setting up Environment Variables:
 
@@ -63,10 +63,6 @@ You can set up the **Marketplace** in two ways: using **Git** or **Docker**.
 
 ### 1. **How to Use with Git**:
 
-Follow these steps to install and run the project using Git.
-
-#### Steps:
-
 1. **Clone the Repository:**
 
 ```bash
@@ -102,7 +98,7 @@ mysql -u root -p CREATE DATABASE marketplace;
 
 The database configuration is located in the config.py file in the root directory.
 
-The SQL scripts for the required tables can be found in the /db directory.
+The SQL scripts for the tables can be found in the /db directory.
 
 7. **Run the Flask Application:**
 
@@ -110,25 +106,21 @@ The SQL scripts for the required tables can be found in the /db directory.
 python run.py
 ```
 
-8. **This will start the Flask development server at http://127.0.0.1:5000/.**
+8. **This will start the app at http://127.0.0.1:5000/.**
 
 ### 2. **How to Use with Docker**:
-Follow these steps to run the project using Docker.
 
 **Prerequisites**:
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-#### Steps:
-
-Clone the Repository and navigate to the project directory:
+1. **Clone the Repository and navigate to the project directory:**
 ```bash
 git clone https://github.com/lllDavid/marketplace.git
 cd marketplace
 ```
 
-**Build and Start the Application Using Docker Compose:**
+2. **Build and Start the Application:**
 
-Run the following command to build and start the application:
 ```bash
 docker-compose up 
 ```
@@ -139,7 +131,6 @@ If you get any errors try running:
 docker-compose --build
 ```
 
-**Access the Application:** 
+3. **Access the Application:** 
 
-Once the containers are up and running, you can access the app in your browser at:
-http://localhost:5000
+This will start the app at http://127.0.0.1:5000/.
