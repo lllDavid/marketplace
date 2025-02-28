@@ -69,96 +69,137 @@ git clone https://github.com/lllDavid/marketplace.git
 ```
 
 ### 2. Install dependencies
-#### Debian
-```bash
-cd marketplace
-``` 
 
-Create virtual enviroment:
-```bash
-python3 -m venv venv
-```
+#### Debian 
 
-Activate virtual enviroment:
-```bash
-source venv/bin/activate
-```
+1. **Navigate to the marketplace directory:**
+    ```bash
+    cd marketplace
+    ```
 
-Install requirements:
-```bash
-pip install -r requirements.txt
-```
+2. **Create a virtual environment:**
+    ```bash
+    python3 -m venv venv
+    ```
+
+3. **Activate the virtual environment:**
+    ```bash
+    source venv/bin/activate
+    ```
+
+4. **Install requirements:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 #### Windows
-```bash
-cd marketplace
-pip install -r requirements.txt
-```
+
+1. **Navigate to the marketplace directory:**
+    ```bash
+    cd marketplace
+    ```
+
+2. **Install requirements:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ### 3. Set up MariaDB
 
-#### Debian
-```bash
-sudo apt-get install mariadb-server
-sudo service mysql start
-```
+#### Debian 
+
+1. **Install MariaDB server:**
+    ```bash
+    sudo apt-get install mariadb-server
+    ```
+
+2. **Start the MySQL service:**
+    ```bash
+    sudo service mysql start
+    ```
+
 #### Windows
 
-You can download and install MariaDB from their official site: [MariaDB](https://mariadb.com/downloads/)
+1. **Download and install MariaDB from their official site:**
+    [MariaDB](https://mariadb.com/downloads/)
+
 
 ### 4. Connect to Database
 
-#### Debian
-```bash
-mysql -u root -p
-```
+#### Debian 
+
+1. **Connect to the MariaDB server:**
+
+    ```bash
+    mysql -u root -p
+    ```
 
 #### Windows
 
-Run HeidiSQL which comes with MariaDB and create a new Session. Enter your MariaDB User and Password.
+1. **Run HeidiSQL** (which comes with MariaDB) and **create a new session**.
+2. **Enter your MariaDB user and password.**
 
 ### 5. Create the tables
-#### Debian
-```bash
-source app/db/001_create_user_db.sql;
-source app/db/002_create_coin_db.sql;
-source app/db/003_create_crypto_wallet_db.sql;
-source app/db/004_create_fiat_wallet_db.sql;
-```
 
+#### Debian 
+
+1. **Execute the SQL scripts to create the necessary tables:**
+
+    ```bash
+    source app/db/001_create_user_db.sql;
+    source app/db/002_create_coin_db.sql;
+    source app/db/003_create_crypto_wallet_db.sql;
+    source app/db/004_create_fiat_wallet_db.sql;
+    ```
 #### Windows
 
-After entering the session use the query tab to execute the SQL scripts located in app/db.
+1. **After entering the session in HeidiSQL,** use the **query tab** to execute the SQL scripts located in `app/db`.
 
 ### 6. Run the Application
-#### Debian
-```bash
-python3 run.py
-```
+
+#### Debian 
+
+1. **Start the application:**
+
+    ```bash
+    python3 run.py
+    ```
 
 #### Windows
-```bash
-python run.py
-```
 
-### 7. This will start the App at: http://127.0.0.1:5000
+1. **Start the application:**
+
+    ```bash
+    python run.py
+    ```
+
+### 7. This will start the App at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
 
 ## How to Use with Docker
 
 #### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-### 1. Clone the Repository and navigate to the project directory
+### 1. Clone the Repository and navigate to the directory
+
 ```bash
 git clone https://github.com/lllDavid/marketplace.git
 cd marketplace
 ```
 
-### 2. Build and Start the Application Using Docker Compose
+### 2. Run docker compose
 
 ```bash
 docker-compose up 
 ```
 
-### 3. This will start the App at: http://localhost:5000
+### 3. Run docker start
+
+```bash
+docker start marketplace-app-1
+```
+
+### 3. This will start the App at: [http://localhost:5000](http://localhost:5000)
+
 

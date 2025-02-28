@@ -2,7 +2,7 @@ from os import path
 
 def get_db_host():
     if path.exists("/.dockerenv"):
-        return "host.docker.internal"  
+        return "db"  
     else:
         return "localhost"  
 
