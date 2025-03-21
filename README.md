@@ -15,6 +15,19 @@
 - Secure password hashing (Argon2id) 
 - Secure authentication (2FA via Authenticator App not yet implemented) 
 
+![Landing](images/landing.png)
+![Sign-Up](images/signup.png)
+![Login](images/login.png)
+![Home](images/home.png)
+![Trade](images/trade.png)
+![Wallet](images/wallet.png)
+![Deposit](images/deposit.png)
+![Settings1](images/settings.png)
+![Settings2](images/settings2.png)
+![Support](images/support.png)
+
+
+
 ## Prerequisites
 - Python 3.12+
 - MariaDB
