@@ -24,7 +24,3 @@ def create_fiat_wallet(user_id: int) -> FiatWallet | None:
         insert_fiat_wallet(wallet)
         
         return wallet
-
-
-
-

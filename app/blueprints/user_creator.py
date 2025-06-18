@@ -26,7 +26,6 @@ def set_user_session(user):
     session["user_id"] = user.id
     session["username"] = user.username
 
-# TODO: Change so it doesnt show sensitive info
 def handle_error(error):
     flash(f"Error: {str(error)}", "error")
     return redirect(url_for('user_creator.create_user_form'))

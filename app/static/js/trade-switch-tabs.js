@@ -1,45 +1,35 @@
 function showTab(tab) {
+    const buyForm = document.getElementById('buy-form');
+    const sellForm = document.getElementById('sell-form');
+    const activeButton = document.querySelector('.tab-button.active');
+    activeButton.classList.remove('active');
+
     if (tab === 'buy') {
-        document.getElementById('buy-form').style.display = 'block';
-        document.getElementById('sell-form').style.display = 'none';
-        document.querySelector('.tab-button.active').classList.remove('active');
+        buyForm.style.display = 'block';
+        sellForm.style.display = 'none';
         document.querySelector('.tab-button:nth-child(1)').classList.add('active');
     } else {
-        document.getElementById('buy-form').style.display = 'none';
-        document.getElementById('sell-form').style.display = 'block';
-        document.querySelector('.tab-button.active').classList.remove('active');
+        buyForm.style.display = 'none';
+        sellForm.style.display = 'block';
         document.querySelector('.tab-button:nth-child(2)').classList.add('active');
     }
 }
 
-// @todo: Get actual values for coins from db/api
-document.getElementById('buy-amount').addEventListener('input', function () {
-    const amount = parseFloat(this.value);
-    const price = 90000;
+const price = 90000;
+function updateTotal(inputId, outputId, prefix = '$') {
+    const amount = parseFloat(document.getElementById(inputId).value);
     if (!isNaN(amount)) {
-        const totalCost = amount * price;
-        document.getElementById('total-cost').value = `$${totalCost.toFixed(2)}`;
+        const total = amount * price;
+        document.getElementById(outputId).value = `${prefix}${total.toFixed(2)}`;
     } else {
-        document.getElementById('total-cost').value = '';
+        document.getElementById(outputId).value = '';
     }
+}
+
+document.getElementById('buy-amount').addEventListener('input', () => {
+    updateTotal('buy-amount', 'total-cost');
 });
 
-// @todo: Get actual values for coins from db/api
-document.getElementById('sell-amount').addEventListener('input', function () {
-    const amount = parseFloat(this.value);
-    const price = 90000;
-    if (!isNaN(amount)) {
-        const totalWorth = amount * price;
-        document.getElementById('total-worth').value = `$${totalWorth.toFixed(2)}`;
-    } else {
-        document.getElementById('total-worth').value = '';
-    }
-});
-
-document.getElementById('payment-method').addEventListener('change', function () {
-    if (this.value === 'fiat') {
-        document.getElementById('buy-limit-container').style.display = 'none';
-    } else {
-        document.getElementById('buy-limit-container').style.display = 'block';
-    }
+document.getElementById('sell-amount').addEventListener('input', () => {
+    updateTotal('sell-amount', 'total-worth');
 });
