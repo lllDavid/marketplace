@@ -4,14 +4,14 @@
 - **Note**: This is not an actual exchange and does not involve real transactions. It is intended as a development prototype for educational and demonstration purposes.
 
 ## Features
-- Cryptocurrency buying and selling functionality (Mock Implementation) 
-- Dashboard showing Market Data (Mock Implementation) 
+- Cryptocurrency buying and selling functionality (mock implementation)
+- Dashboard showing Market Data (mock implementation)
 - Wallet showing coins and values 
 - Store coins and coin data in a database
 - Store users and user data in a database
 - Flask-based REST APIs
 - Integration with MariaDB for data storage 
-- Using OAuth2 to login with Google Account
+- Using OAuth2 to log in with a Google Account
 - Secure password hashing (Argon2id) 
 - Secure authentication (2FA via Authenticator App not yet implemented) 
 
@@ -84,25 +84,28 @@ git clone https://github.com/lllDavid/marketplace.git
 
 ### 2. Install dependencies
 
-1. **Navigate to the directory:**
-    ```bash
-    cd marketplace
-    ```
+**Navigate to the directory:**
+```bash
+cd marketplace
+```
 
-2. **Create a virtual environment:**
-    ```bash
-    python -m venv venv
-    ```
+**Create a virtual environment:**
+```bash
+python -m venv venv
+```
 
-3. **Activate the virtual environment:**
-    ```bash
-    .\venv\Scripts\activate
-    ```
 
-4. **Install requirements:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+**Activate the virtual environment:**
+```bash
+.\venv\Scripts\activate
+```
+
+
+**Install requirements:**
+```bash
+pip install -r requirements.txt
+```
+
 
 ### 3. Set up MariaDB
 
@@ -112,12 +115,11 @@ git clone https://github.com/lllDavid/marketplace.git
 
 ### 4. Connect to Database
 
-1. **Run HeidiSQL** (which comes with MariaDB) and **create a new session**.
-2. **Enter your MariaDB user and password.**
+**Run HeidiSQL (installed with MariaDB) and create a new session**.
 
 ### 5. Create the tables
 
-**After entering the session in HeidiSQL,** use the **query tab** to execute the SQL scripts located in `app/db`.
+**After entering the session in HeidiSQL,** use the **Query Tab** to execute the SQL scripts located in `marketplace/app/db`.
 
 ### 6. Run the Application
 
@@ -132,30 +134,18 @@ python run.py
 #### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-### 1. In a Terminal run
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/lllDavid/marketplace.git
+```
+### 2. **Navigate to the directory:**
+```bash
 cd marketplace
 ```
-
-### 2. Run docker compose
+### 3. Build and run the Container
 
 ```bash
 docker-compose up 
 ```
-
-### 3. Start Database
-
-```bash
-docker start mariadb
-```
-
-### 4. Start Main Container
-```bash
-docker start marketplace-app-1
-```
-
-### 5. This will start the App at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
-
-
+### This will start the App at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
