@@ -7,6 +7,13 @@ function populateTable() {
             const tbody = document.getElementById("coin-data");
             tbody.innerHTML = '';
 
+            const fiatBalanceElem = document.getElementById("fiat-balance");
+            if (data.fiat_balance !== undefined) {
+                fiatBalanceElem.textContent = `Fiat Balance: $${data.fiat_balance.toFixed(2)}`;
+            } else {
+                fiatBalanceElem.textContent = 'Fiat Balance: N/A';
+            }
+
             if (data.coins && Object.keys(data.coins).length > 0) {
                 originalData = { ...data.coins };
 

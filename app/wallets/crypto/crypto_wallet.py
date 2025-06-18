@@ -18,27 +18,25 @@ class CryptoWallet:
         amount = amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
         formatted_date = date.strftime('%Y-%m-%d %H:%M:%S')
         self.deposit_history[formatted_date] = self.deposit_history.get(formatted_date, Decimal("0.00")) + amount
-        # TODO shows double the actual amount
 
     def add_withdrawal_to_history(self, date: datetime, amount: Decimal, method: str) -> None:
         amount = amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
         formatted_date = date.strftime('%Y-%m-%d %H:%M:%S')
         self.withdrawal_history.setdefault(formatted_date, {})[method] = amount
 
-    def calculate_total_coin_value(self) -> Decimal:
+    def calculate_total_coin_value(self) -> None:
         total_value = sum(self.coins.values(), Decimal(0)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
         self.total_coin_value = total_value
-        return total_value
 
     def add_coins(self, coin: str, amount: Decimal, date: datetime) -> None:
-        amount = amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
-        if amount <= Decimal("0.00"):
+        amount = amount.quantize(Decimal("0.000000000000000001"), rounding=ROUND_HALF_UP)
+        if amount <= Decimal("0"):
             raise ValueError("Amount to add must be positive.")
-        self.coins[coin] = self.coins.get(coin, Decimal("0.00")) + amount
+        self.coins[coin] = self.coins.get(coin, Decimal("0")) + amount
         self.add_deposit_to_history(date, amount)
 
     def remove_coins(self, coin: str, amount: Decimal, date: datetime, method: str) -> None:
-        amount = amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+        amount = amount.quantize(Decimal("0.000000000000000001"), rounding=ROUND_HALF_UP)
         if amount <= Decimal("0.00"):
             raise ValueError("Amount to subtract must be positive.")
         if coin not in self.coins or self.coins[coin] < amount:

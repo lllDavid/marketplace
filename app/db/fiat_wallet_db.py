@@ -40,7 +40,7 @@ def insert_fiat_wallet(wallet: FiatWallet) -> FiatWallet | None:
                     "INSERT INTO fiat_wallet (user_id, balance, iban, swift_code, routing_number, encryption_key, deposit_history, withdrawal_history) "
                     "VALUES (%s, %s, %s, %s, %s, %s, %s, %s); ",
                     (wallet.user_id, 
-                     wallet.balance, 
+                     Decimal("1000.00"),
                      wallet.iban, 
                      wallet.swift_code, 
                      wallet.routing_number, 

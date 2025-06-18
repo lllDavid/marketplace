@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 def get_requirements(filename) -> list[str]:
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding='utf-8-sig') as f:
         return [line.strip() for line in f.readlines() if line.strip()]
 
 setup(

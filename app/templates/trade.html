@@ -16,13 +16,13 @@
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
 
-  <div class="alert alert-dismissible fade show" role="alert">
-    {% for category, message in messages %}
-    <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }}">
-      {{ message }}
-    </div>
-    {% endfor %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show"
+    role="alert">
+    {{ message }}
   </div>
+  {% endfor %}
+
   {% endif %}
   {% endwith %}
 
@@ -44,19 +44,8 @@
       <label for="buy-amount">Amount:</label>
       <input type="number" step="any" id="buy-amount" name="coin-amount" placeholder="Enter amount" required>
 
-      <label for="payment-method">Payment Method:</label>
-      <select id="payment-method" name="payment_method" required>
-        <option value="fiat">Fiat (USD, EUR, etc.)</option>
-        <option value="crypto">Cryptocurrency</option>
-      </select>
-
-      <div id="buy-limit-container">
-        <label for="limit-price">Limit Price (if limit order):</label>
-        <input type="number" id="limit-price" name="limit_price" placeholder="Set limit price (optional)">
-      </div>
-
       <label for="total-cost">Total Cost:</label>
-      <input type="text" id="total-cost" name="total-cost" disabled>
+      <input type="text" id="total-cost" name="total-cost" readonly>
 
       <div class="submit-button-container">
         <button type="submit" id="buy-submit-button" class="btn btn-primary">Place Order</button>
@@ -77,11 +66,8 @@
       <label for="sell-amount">Amount:</label>
       <input type="number" step="any" id="sell-amount" name="coin-amount" placeholder="Enter amount" required>
 
-      <label for="sell-price">Sell Price (Optional, for limit order):</label>
-      <input type="number" id="sell-price" name="sell_price" placeholder="Enter price for limit order (optional)">
-
       <label for="total-worth">Total Worth:</label>
-      <input type="text" id="total-worth" name="total-worth" disabled>
+      <input type="text" id="total-worth" name="total-worth" readonly>
 
       <div class="submit-button-container">
         <button type="submit" id="sell-submit-button" class="btn btn-primary">Place Order</button>
