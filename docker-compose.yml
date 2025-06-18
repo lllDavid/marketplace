@@ -4,16 +4,21 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - DB_HOST=db  
 
   db:
     image: mariadb:latest
-    container_name: mariadb
     environment:
       MARIADB_ROOT_PASSWORD: root
-      MARIADB_PASSWORD: root
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 1m
     ports:
       - "3306:3306"
     volumes:
