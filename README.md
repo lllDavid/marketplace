@@ -34,8 +34,30 @@
 - `pip`
 
 ## Setting up Environment Variables
+Set your DB Configuration in a `.env` file in root directory
 
-To use certain features, you'll need to create a `.env` file in the root of the project with the following content: 
+```env
+USER_DB_NAME=marketplace_users
+USER_DB_USER=""
+USER_DB_PASSWORD=""
+USER_DB_HOST=localhost
+USER_DB_PORT=3306
+
+COIN_DB_NAME=marketplace_coins
+COIN_DB_USER=""
+COIN_DB_PASSWORD=""
+COIN_DB_HOST=localhost
+COIN_DB_PORT=3306
+
+WALLET_DB_NAME=marketplace_wallets
+WALLET_DB_USER=""
+WALLET_DB_PASSWORD=""
+WALLET_DB_HOST=localhost
+WALLET_DB_PORT=3306
+
+MARIADB_ROOT_PASSWORD=""
+```
+To use certain features, you'll need to create a `.env` file in the /app directory with the following content: 
 
 ```bash
 # Google OAuth credentials

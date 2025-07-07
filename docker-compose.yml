@@ -7,12 +7,28 @@ services:
       db:
         condition: service_healthy
     environment:
-      - DB_HOST=db  
+      - USER_DB_NAME=${USER_DB_NAME}
+      - USER_DB_USER=${USER_DB_USER}
+      - USER_DB_PASSWORD=${USER_DB_PASSWORD}
+      - USER_DB_HOST=${USER_DB_HOST}
+      - USER_DB_PORT=${USER_DB_PORT}
+
+      - COIN_DB_NAME=${COIN_DB_NAME}
+      - COIN_DB_USER=${COIN_DB_USER}
+      - COIN_DB_PASSWORD=${COIN_DB_PASSWORD}
+      - COIN_DB_HOST=${COIN_DB_HOST}
+      - COIN_DB_PORT=${COIN_DB_PORT}
+
+      - WALLET_DB_NAME=${WALLET_DB_NAME}
+      - WALLET_DB_USER=${WALLET_DB_USER}
+      - WALLET_DB_PASSWORD=${WALLET_DB_PASSWORD}
+      - WALLET_DB_HOST=${WALLET_DB_HOST}
+      - WALLET_DB_PORT=${WALLET_DB_PORT}
 
   db:
     image: mariadb:latest
     environment:
-      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 10s
