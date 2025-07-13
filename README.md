@@ -57,7 +57,7 @@ WALLET_DB_PORT=3306
 
 MARIADB_ROOT_PASSWORD=""
 ```
-To use certain features, you'll need to create a `.env` file in the /app directory with the following content: 
+To use certain features, you'll need to add the following to the `.env` file : 
 
 ```bash
 # Google OAuth credentials
