@@ -4,15 +4,16 @@
 - **Note**: This is not an actual exchange and does not involve real transactions. It is intended as a development prototype for educational and demonstration purposes.
 
 ## Features
-- Cryptocurrency buying and selling functionality (mock implementation)
-- Dashboard showing Market Data (mock implementation)
-- Wallet showing coins and values 
-- Store coins and coin data in a database
-- Store users and user data in a database
-- Flask-based REST APIs
-- Integration with MariaDB for data storage 
+- Cryptocurrency buying and selling functionality
+- Dashboard displaying current market data
+- Wallet interface showing coins and their values
+- Database storage for coins and related data
+- Database storage for users and their information
+- Integration with MariaDB for persistent data management
 - Using OAuth2 to log in with a Google Account
+- Notification system to message the support
 - Secure password hashing (Argon2id) 
+- Password reset functionality for users
 - Secure authentication (2FA via Authenticator App not yet implemented) 
 
 ![Landing](images/landing.png)
@@ -57,7 +58,7 @@ WALLET_DB_PORT=3306
 
 MARIADB_ROOT_PASSWORD=""
 ```
-To use certain features, you'll need to create a `.env` file in the /app directory with the following content: 
+To use certain features, you'll need to add the following to the `.env` file : 
 
 ```bash
 # Google OAuth credentials
