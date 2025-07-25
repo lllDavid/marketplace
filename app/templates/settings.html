@@ -28,6 +28,7 @@
 
     <section class="settings-section">
         <form action="/settings" method="POST" id="account-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="{{ user.username }}">
@@ -51,6 +52,7 @@
     <section class="settings-section">
         <h2>Bank</h2>
         <form action="/settings" method="POST" id="bank-account-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <p class="lead">Add Bank Details</p>
                 <label for="bank-name">Bank Name</label>
@@ -85,6 +87,7 @@
     <section class="settings-section">
         <h2>Account Management</h2>
         <form action="/settings" method="POST" id="delete-account-form" onsubmit="return confirmDelete()">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <p>If you would like to delete your account, please do so below. This action is irreversible.</p>
             <button type="submit" name="delete-account" class="btn btn-danger">Delete Account</button>
         </form>

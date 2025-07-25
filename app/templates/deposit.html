@@ -12,6 +12,7 @@
     <p class="lead">Select your region to see bank transfer details.</p>
 
     <form id="payment-form" class="deposit-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
         <div class="form-group">
             <select id="region" name="region" required class="form-control">

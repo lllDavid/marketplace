@@ -2,8 +2,9 @@ from os import urandom
 from os import getenv
 from dotenv import load_dotenv
 
-from flask import Flask
+from flask import Flask  
 from flask_mail import Mail
+from flask_wtf import CSRFProtect
 from authlib.integrations.flask_client import OAuth
 
 from config import Config
@@ -17,11 +18,14 @@ from app.routes.routes import register_routes
 
 load_dotenv()
 
+csrf = CSRFProtect()  
+
 mail = Mail()
 
 def create_app() -> Flask:
     marketplace = Flask(__name__, static_folder="static", template_folder="templates")
     oauth = OAuth(marketplace)
+    csrf.init_app(marketplace)
     marketplace.secret_key = getenv('APP_SECRET_KEY', urandom(24)) # Fallback to urandom if not found
     marketplace.config.from_object(Config)
     marketplace.config.from_object(Config)
